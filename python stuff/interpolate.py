@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from math import sqrt, asin, cos, sin
 
-##Git test
+
 
 ##take a list of vetors from a text file
 ## format of file: space seperated list
@@ -24,10 +24,6 @@ twopi=6.2831853
 
 
 
-def POSheadcut(file):
-    lines=6
-    o.open(file,"a")
-    return 0
 
 def shift (vector):
     E = np.array([[1,0,0],[0,1,0],[0,0,1]])
@@ -56,11 +52,11 @@ def rotate (theta,vec):
 
 imgs=5
 
-df1 = pd.read_csv('tetra.txt', sep=' ')
+df1 = pd.read_csv('tetrax.txt', sep=' ')
 print(df1)
 coords1 = df1.values
 
-df2 = pd.read_csv('tetra2.txt', sep=' ')
+df2 = pd.read_csv('tetrax2.txt', sep=' ')
 print(df2)
 coords2 = df2.values
 
@@ -140,8 +136,6 @@ images = np.array(images)
 #loop k goes through 
 
 
-
-
 i=0
 j=0
 rndk=200
@@ -176,17 +170,13 @@ plt.show()
 
 i=0
 
-
+print(images[6][32][2])
 
 for i in range(imgs+2):
     f = open('POSCAR'+str(i),'r+')
     j=0   
     for j in range(len(diff1)):
         f.write(str(images[i][j][0])+' '+str(images[i][j][1])+' '+str(images[i][j][2])+'\n')
-
-
-for image in images:
-    print(image[:1])
 #
 #for image in images:
 #    i=i+1
